@@ -62,8 +62,6 @@ export async function getRepositoryData(wwclient : Client, message : Message) {
         }
     )).split(",")[1]
 
-    //I failed in modern physics, I did not cry then, I'm crying now. PLease someone save meeeeeeeeeeeeeee.
-
     // let plot = newPlot(
     //     div,
     //     [
