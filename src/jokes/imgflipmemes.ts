@@ -13,6 +13,7 @@ export async function memes(wwclient: Client, message: Message) {
     }
 
     //I'm not mentally sane Am I???
+    // readability? who needs to read this
     return await wwclient.sendMessage(message.from, await MessageMedia.fromUrl(response.data.memes[counter].url), {caption : response.data.memes[counter].name + (message.body.toLowerCase().split(" ").includes("--url") || message.body.toLowerCase().split(" ").includes("-u") ? `\n\n URL : \`\`\`${response.data.memes[counter ++].url}\`\`\`` : `${counter ++}`.replace(counter.toString(), "") ), sendMediaAsSticker : message.body.toLowerCase().split(" ").includes("--sticker") || message.body.toLowerCase().split(" ").includes("-s")})
 }
 
