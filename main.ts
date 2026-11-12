@@ -1,12 +1,7 @@
-/**
- * 
- */
-
-
 import dotenv from "dotenv"
 dotenv.config()
 import { Client, LocalAuth, Message } from 'whatsapp-web.js'
-import qrcode from 'qrcode-terminal' //Importing error man fuck tsc, just import the function, don't default
+import qrcode from 'qrcode-terminal' // Importing error man fuck tsc, just import the function, don't default
 import { RevokedMessage } from './src/classes/RevokedMessage'
 import { SavedContact } from './src/classes/User'
 import { MutedUser } from './src/classes/BlockedUsers'
