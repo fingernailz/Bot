@@ -46,6 +46,11 @@ export default async function changeImageMimeType(message: Message) {
     return 
   }
 
+  if (target == undefined) {
+    console.log('error, give some thing')
+    return
+  }
+
   return await message.reply(
     new MessageMedia(
       newMimeType(message),

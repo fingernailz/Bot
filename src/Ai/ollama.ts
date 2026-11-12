@@ -36,7 +36,7 @@ export async function askOllama(wwclient: Client, message: Message) {
         
     } 
 
-    let media: null | MessageMedia = null
+    let media: null | MessageMedia | undefined = null
 
     if (!message.hasMedia) {
         if (message.hasQuotedMsg) {
