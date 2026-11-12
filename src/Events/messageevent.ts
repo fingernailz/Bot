@@ -8,8 +8,8 @@ import destroyClient from "../client/destroy";
 import unpin from "../commands/unpin";
 import unmute from "../commands/umute";
 import sticker from "../commands/sticker";
-import { setGroupPicture } from "../commands/setgrouppicture";  
-import { ScreenShot } from "../commands/screenshot";
+import  setGroupPicture  from "../commands/setgrouppicture";  
+import  ScreenShot  from "../commands/screenshot";
 import revokeGroupInvites from "../commands/revokeinvites";
 import references from "../commands/references";
 import createPoll from "../commands/poll";
@@ -17,11 +17,11 @@ import pinMessage from "../commands/pin";
 import getChatName from "../commands/name";
 import muteChat from "../commands/mute";
 import susLinks from "../commands/link";
-import { changeMessageSettings } from "../commands/groupinfo";
+import  changeMessageSettings  from "../commands/groupinfo";
 import getInviteCode from "../commands/invitecode";
 import { groupName } from "../commands/groupsubject";
-import { deleteGroupProfilePicture } from "../commands/groupprofiledel";
-import { groupDescription } from "../commands/groupdescription";
+import  deleteGroupProfilePicture  from "../commands/groupprofiledel";
+import groupDescription  from "../commands/groupdescription";
 import timesForwarded from "../commands/forwarded";
 import { createGroupChat } from "../commands/creategroup";
 import clearMessagesFromClient from "../commands/clear";
@@ -43,7 +43,7 @@ import { dadJoke } from "../jokes/dadjokes";
 import { recieveAdvice } from "../jokes/advice";
 import { EarthImage } from "../Nasa/earth";
 import { Apod } from "../Nasa/apod";
-import { getLyrics } from "../songs/lyricsovh";
+import  getLyrics  from "../songs/lyricsovh";
 import { paste } from "../pastebin/paste";
 import { getRepositoryData } from "../CodeTabs/repositorylines";
 import { CAAS } from "../Animals/cats/catasaservice";
@@ -118,7 +118,7 @@ export const MessageEvent = async (message: Message ) => {
             modelSelector(message.body.split(" ")[1].slice(2).toLowerCase()) 
             break
         case "~lam":
-            await askOllama(wwclient, message)
+            // await askOllama(wwclient, message)
             break
         case "~cmlam":
             await chooseModel(message) 
@@ -133,7 +133,7 @@ export const MessageEvent = async (message: Message ) => {
             await paste(wwclient, message)
             break
         case "~lyr":
-            await getLyrics(wwclient, message)
+            //await getLyrics(wwclient, message)
             break
         case "~apod":
             await Apod(wwclient, message)
@@ -193,7 +193,7 @@ export const MessageEvent = async (message: Message ) => {
             await suiiiiii(message)
             break
         case "~cm":
-            await clearMessagesFromClient(wwclient, message)
+            // await clearMessagesFromClient(wwclient, message)
             break
         case "~cg":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
@@ -207,27 +207,27 @@ export const MessageEvent = async (message: Message ) => {
             }
             break
         case "~f":
-            await timesForwarded(message)
+            // await timesForwarded(message)
             break
         case "~gd":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
-            await groupDescription(wwclient, message)
+            // await groupDescription(wwclient, message)
             break
         case "~gi":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
 
-            await changeMessageSettings(wwclient, message, message.body.toLowerCase().split(" ").includes("--admins") || message.body.toLowerCase().split(" ").includes("-a"))
+            // await changeMessageSettings(wwclient, message, message.body.toLowerCase().split(" ").includes("--admins") || message.body.toLowerCase().split(" ").includes("-a"))
             break
         case "~dpg":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
 
-            await deleteGroupProfilePicture(wwclient, message)
+            // await deleteGroupProfilePicture(wwclient, message)
             break
         case "~sgn":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
@@ -237,68 +237,68 @@ export const MessageEvent = async (message: Message ) => {
             await groupName(wwclient, message)
             break
         case "~inc":
-            await getInviteCode(message)
+            // await getInviteCode(message)
             break
         case "~gms":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
-            await changeMessageSettings(wwclient, message,  message.body.toLowerCase().split(" ").includes("--admins") || message.body.toLowerCase().split(" ").includes("-a"))
+            // await changeMessageSettings(wwclient, message,  message.body.toLowerCase().split(" ").includes("--admins") || message.body.toLowerCase().split(" ").includes("-a"))
             break
         case "~links":
-            await susLinks(wwclient, message)
+            // await susLinks(wwclient, message)
             break
         case "~mute":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
-            await muteChat(message)
+            // await muteChat(message)
             break
         case "~n":
-            await getChatName(wwclient, message)
+            // await getChatName(wwclient, message)
             break
         case "~pin":
-            await pinMessage(message)
+            // await pinMessage(message)
             break
         case "~poll":
-            await createPoll(wwclient, message)
+            // await createPoll(wwclient, message)
             break
         case "~refs":
-            await references(wwclient, message)
+            // await references(wwclient, message)
             break
         case "~reiv":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
             
-            await revokeGroupInvites(wwclient, message)
+            // await revokeGroupInvites(wwclient, message)
             break
         case "~ss":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return await message.reply(/*Errors.ACCESS_BY_NON_ADMIN*/"Error")
             }
 
-            await ScreenShot(wwclient, message)
+            // await ScreenShot(wwclient, message)
             break
         case "~sgp":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
             
-            await setGroupPicture(wwclient, message)
+            // await setGroupPicture(wwclient, message)
             break
         case "~stk":
-            await sticker(wwclient, message)
+            // await sticker(wwclient, message)
             break
         case "~unmute":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
                 return
             }
 
-            await unmute(message)
+            // await unmute(message)
             break
         case "~unpin":
-            await unpin(message)
+            // await unpin(message)
             break
         case "~lg":
             if (!(contact == process.env.PHONE_NUMBER_SERIALIZED)) {
