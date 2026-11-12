@@ -41,7 +41,6 @@
     "pouchdb": "^9.0.0",
     "puppeteer": "^24.12.1",
     "qrcode-terminal": "^0.12.0",
-    "react": "^19.1.0",
     "ts-node": "^10.9.2",
     "ts-qrcode-terminal": "^1.0.1",
     "tsc": "^2.0.4",
